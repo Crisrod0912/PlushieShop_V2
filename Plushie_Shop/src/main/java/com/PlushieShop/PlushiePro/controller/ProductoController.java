@@ -1,0 +1,65 @@
+package com.PlushieShop.PlushiePro.controller;
+
+import com.PlushieShop.PlushiePro.domain.Producto;
+import com.PlushieShop.PlushiePro.service.CategoriaService;
+import com.PlushieShop.PlushiePro.service.ProductoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/producto")
+public class ProductoController {
+
+    @Autowired
+    private ProductoService productoService;
+    @Autowired
+    private CategoriaService categoriaService;
+
+    @GetMapping("/listado")
+    public String listado(@RequestParam(value = "nombre", required = false) String nombre, Model model) {
+        System.out.println(nombre);
+        List<Producto> productos = productoService.getProductos(false);
+
+        if (nombre != null && !nombre.isEmpty()) {
+            productos = productoService.findByNombreOrderByNombre(nombre);
+        } else {
+            System.out.println("entra");
+            productos = productoService.getProductos(false);
+        }
+
+        model.addAttribute("productos", productos);
+        model.addAttribute("totalProductos", productos.size());
+        return "/producto/listado";
+    }
+
+    @GetMapping("/listado/{idCategoria}")
+    public String listado(@PathVariable("idCategoria") Long idCategoria, Model model) {
+        List<Producto> productos = productoService.getProductosByCategoria(idCategoria);
+
+        model.addAttribute("productos", productos);
+        return "/producto/listado";
+    }
+
+    @GetMapping("/listado2")
+    public String listado2(Model model) {
+        var productos = productoService.getProductos(false);
+        model.addAttribute("productos", productos);
+        return "/producto/listado2";
+    }
+
+    @GetMapping("/query1")
+    public String consultaQuery1(Model model) {
+        var nombre = "";
+        var productos = productoService.findByNombreOrderByNombre(nombre);
+        model.addAttribute("productos", productos);
+        model.addAttribute("precioInf", nombre);
+        return "/producto/listado2";
+
+    }
+}
