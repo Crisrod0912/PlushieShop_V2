@@ -492,7 +492,7 @@ EXCEPTION
     INSERT INTO ERRORES_AUDIT VALUES (USER, 'GET_USU_USER_PASS', SYSDATE, VCOD || ' - '|| VMES);
 END GET_USU_USER_PASS;
 
--- Función para obtener usuario por corre.
+-- Función para obtener usuario por correo.
 CREATE OR REPLACE FUNCTION GET_USU_USER_CORRE (
     user_name VARCHAR2,
     corre VARCHAR2
