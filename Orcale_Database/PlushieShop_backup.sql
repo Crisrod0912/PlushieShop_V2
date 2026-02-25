@@ -750,7 +750,7 @@ EXCEPTION
 END GET_PRODUCTO_BY_ID;
 
 -- Procedimiento almacenado para insertar producto.
-CREATE OR REPLACE PROCEDURE INSERT_PRODUCTO(
+CREATE OR REPLACE PROCEDURE INSERT_PRODUCTO (
     p_id_producto IN NUMBER,
     p_id_categoria IN NUMBER,
     p_nombre IN VARCHAR2,
