@@ -582,7 +582,7 @@ EXCEPTION
     INSERT INTO ERRORES_AUDIT VALUES (USER, 'INSERTAR_VENTA', SYSDATE, VCOD || ' - '|| VMES);
 END INSERTAR_VENTA;
 
--- Procedimiento lamacenado para crear usuario.
+-- Procedimiento almacenado para crear usuario.
 CREATE OR REPLACE PROCEDURE CREAR_USUARIO (
     nomb VARCHAR2,
     apelli VARCHAR2,
@@ -791,7 +791,7 @@ EXCEPTION
         VALUES (USER, 'DELETE_PRODUCTO', SYSDATE, VCOD || ' - ' || VMES);
 END DELETE_PRODUCTO;
 
--- Procedimiento para buscar producto por nombre.
+-- Procedimiento almacenado para buscar producto por nombre.
 CREATE OR REPLACE PROCEDURE FIND_PRODUCTO_BY_NOMBRE (
     p_nombre VARCHAR2, 
     p_resultado OUT SYS_REFCURSOR
