@@ -1,6 +1,6 @@
 # 🧸 PlushieShop
 
-PlushieShop is a web application developed with Java, Spring Boot, and MySQL. It simulates a virtual store specializing in plush toys across multiple categories, integrating authentication, product management, shopping cart functionality, and user interaction features. The system was designed following course requirements and best practices in web development.
+PlushieShop is a web application developed with Java, Spring Boot, and Oracle. It simulates a virtual store specializing in plush toys across multiple categories, integrating authentication, product management, shopping cart functionality, and user interaction features. The system was designed following course requirements and best practices in web development.
 
 ## ✨ Features
 
@@ -60,7 +60,7 @@ PlushieShop is a web application developed with Java, Spring Boot, and MySQL. It
 1. 📥 Clone the repository:
 
    ```bash
-   git clone https://github.com/Crisrod0912/PlushieShop_V1.git
+   git clone https://github.com/Crisrod0912/PlushieShop_V2.git
    ```
 
 2. 📂 Open the project folder in Apache Netbeans:
