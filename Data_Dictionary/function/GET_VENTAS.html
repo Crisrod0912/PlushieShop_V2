@@ -1,0 +1,186 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252" />
+    <script src="GET_VENTAS/report.js" type="text/javascript"></script>
+    <link href="GET_VENTAS/report.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <table width="98%">
+            <tr>
+                <td>
+                    <h2 class="banner">GET_VENTAS</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="maintabs">
+
+        <div class="currentmaintab" onclick="onSelectMainTab(this, 0)">
+            <div>
+                <p>Doc</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 1)">
+            <div>
+                <p>Details</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 2)">
+            <div>
+                <p>Grants</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 3)">
+            <div>
+                <p>References</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 4)">
+            <div>
+                <p>Dependencies</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 5)">
+            <div>
+                <p>Code</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div id="masterreports">
+
+        <div id="Master.0">
+            <div class="currentmasterreport">
+
+                <h3>Descripción</h3>
+                <p>
+                    Función que retorna un <b>SYS_REFCURSOR</b> con todas las ventas registradas
+                    en la tabla <b>VENTA</b>.
+                </p>
+
+                <h3>Resumen Técnico</h3>
+                <table border="1" width="100%" cellpadding="4">
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Valor</th>
+                    </tr>
+                    <tr>
+                        <td>Tipo de Objeto</td>
+                        <td>FUNCTION</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo de Retorno</td>
+                        <td>SYS_REFCURSOR</td>
+                    </tr>
+                    <tr>
+                        <td>Parámetros</td>
+                        <td>No recibe parámetros</td>
+                    </tr>
+                    <tr>
+                        <td>Tabla Utilizada</td>
+                        <td>VENTA</td>
+                    </tr>
+                    <tr>
+                        <td>Tabla de Auditoría</td>
+                        <td>ERRORES_AUDIT</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.1">
+            <div class="masterreport">
+
+                <table cellpadding="4" cellspacing="0" border="1" width="100%">
+                    <tr>
+                        <th>NAME</th>
+                        <th>VALUE</th>
+                    </tr>
+                    <tr>
+                        <td>OBJECT_NAME</td>
+                        <td>GET_VENTAS</td>
+                    </tr>
+                    <tr>
+                        <td>OBJECT_TYPE</td>
+                        <td>FUNCTION</td>
+                    </tr>
+                    <tr>
+                        <td>RETURN_TYPE</td>
+                        <td>SYS_REFCURSOR</td>
+                    </tr>
+                    <tr>
+                        <td>STATUS</td>
+                        <td>VALID</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.2">
+            <div class="masterreport">
+                <p>No se registran privilegios específicos.</p>
+            </div>
+        </div>
+
+        <div id="Master.3">
+            <div class="masterreport">
+                <p>
+                    Referencia directa a tabla: <b>VENTA</b><br />
+                    Referencia de auditoría: <b>ERRORES_AUDIT</b>
+                </p>
+            </div>
+        </div>
+
+        <div id="Master.4">
+            <div class="masterreport">
+                <p>
+                    Depende de la existencia de la tabla <b>VENTA</b>
+                    y de la tabla <b>ERRORES_AUDIT</b>.
+                </p>
+            </div>
+        </div>
+
+        <div id="Master.5">
+            <div class="masterreport">
+
+                <pre>
+CREATE OR REPLACE FUNCTION GET_VENTAS RETURN SYS_REFCURSOR IS
+    resultado SYS_REFCURSOR;
+    VCOD NUMBER;
+    VMES VARCHAR2(500);
+BEGIN
+    OPEN resultado FOR SELECT * FROM VENTA;
+    
+    RETURN resultado;
+    
+EXCEPTION    
+    WHEN OTHERS THEN  
+    VMES := SQLERRM;
+    VCOD := SQLCODE;
+    INSERT INTO ERRORES_AUDIT VALUES (USER, 'GET_VENTAS', SYSDATE, VCOD || ' - '|| VMES);
+END GET_VENTAS;
+</pre>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

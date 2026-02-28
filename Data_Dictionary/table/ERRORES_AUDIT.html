@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252" />
+    <script src="ERRORES_AUDIT/report.js" type="text/javascript"></script>
+    <link href="ERRORES_AUDIT/report.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <table width="98%">
+            <tr>
+                <td>
+                    <h2 class="banner">ERRORES_AUDIT</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="maintabs">
+
+        <div class="currentmaintab" onclick="onSelectMainTab(this, 0)">
+            <div>
+                <p>Columnas</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 1)">
+            <div>
+                <p>Restricciones</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 2)">
+            <div>
+                <p>Detalles</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 3)">
+            <div>
+                <p>Índices</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div id="masterreports">
+
+        <div id="Master.0">
+            <div class="currentmasterreport">
+                <table id="Table.0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>COLUMN_NAME</th>
+                        <th>DATA_TYPE</th>
+                        <th>NULLABLE</th>
+                        <th>DATA_DEFAULT</th>
+                        <th>COLUMN_ID</th>
+                        <th>COMMENTS</th>
+                    </tr>
+
+                    <tr>
+                        <td>USUARIO</td>
+                        <td>VARCHAR2(50)</td>
+                        <td>Yes</td>
+                        <td>null</td>
+                        <td>1</td>
+                        <td>null</td>
+                    </tr>
+
+                    <tr>
+                        <td>ORIGEN</td>
+                        <td>VARCHAR2(50)</td>
+                        <td>Yes</td>
+                        <td>null</td>
+                        <td>2</td>
+                        <td>null</td>
+                    </tr>
+
+                    <tr>
+                        <td>FECHA</td>
+                        <td>DATE</td>
+                        <td>Yes</td>
+                        <td>null</td>
+                        <td>3</td>
+                        <td>null</td>
+                    </tr>
+
+                    <tr>
+                        <td>VERROR</td>
+                        <td>VARCHAR2(600)</td>
+                        <td>Yes</td>
+                        <td>null</td>
+                        <td>4</td>
+                        <td>null</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.1">
+            <div class="masterreport">
+                <table id="Table.1" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>CONSTRAINT_NAME</th>
+                        <th>CONSTRAINT_TYPE</th>
+                        <th>STATUS</th>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.2">
+            <div class="masterreport">
+                <table id="Table.2" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>NAME</th>
+                        <th>VALUE</th>
+                    </tr>
+
+                    <tr>
+                        <td>TABLE_NAME</td>
+                        <td>ERRORES_AUDIT</td>
+                    </tr>
+
+                    <tr>
+                        <td>TABLE_TYPE</td>
+                        <td>NORMAL</td>
+                    </tr>
+
+                    <tr>
+                        <td>COMMENTS</td>
+                        <td>null</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.3">
+            <div class="masterreport">
+                <table id="Table.3" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>INDEX_NAME</th>
+                        <th>UNIQUENESS</th>
+                        <th>COLUMNS</th>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

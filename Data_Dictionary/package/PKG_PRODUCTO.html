@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252" />
+    <script src="PKG_PRODUCTO/report.js" type="text/javascript"></script>
+    <link href="PKG_PRODUCTO/report.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <table width="98%">
+            <tr>
+                <td>
+                    <h2 class="banner">PKG_PRODUCTO</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="maintabs">
+
+        <div class="currentmaintab" onclick="onSelectMainTab(this, 0)">
+            <div>
+                <p>Doc</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 1)">
+            <div>
+                <p>Details</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 2)">
+            <div>
+                <p>Grants</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 3)">
+            <div>
+                <p>References</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 4)">
+            <div>
+                <p>Dependencies</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 5)">
+            <div>
+                <p>Code</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div id="masterreports">
+
+        <div id="Master.0">
+            <div class="currentmasterreport">
+
+                <a name="method_summary"></a>
+                <table width="100%" cellspacing="0" cellpadding="3" border="1">
+                    <tr class="TableHeadingColor">
+                        <td colspan="2">
+                            <font size="+2"><b>Method Summary</b></font>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td width="1%"></td>
+                        <td>
+                            <b><a href="#GET_VENTAS">GET_VENTAS</a></b>() RETURN SYS_REFCURSOR
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#DELETE_PRODUCTO">DELETE_PRODUCTO</a></b>( p_id_producto IN NUMBER )
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#FIND_PRODUCTO_BY_NOMBRE">FIND_PRODUCTO_BY_NOMBRE</a></b>( p_nombre VARCHAR2,
+                            p_resultado OUT SYS_REFCURSOR )
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#GET_PRODUCTO_BY_ID">GET_PRODUCTO_BY_ID</a></b>( p_id_producto IN NUMBER,
+                            p_resultado OUT SYS_REFCURSOR )
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#GET_PRODUCTOS">GET_PRODUCTOS</a></b>( p_resultado OUT SYS_REFCURSOR )
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#INSERT_PRODUCTO">INSERT_PRODUCTO</a></b>( p_id_producto IN NUMBER,
+                            p_id_categoria IN NUMBER, p_nombre IN VARCHAR2, p_descripcion IN VARCHAR2, p_precio IN
+                            NUMBER, p_existencias IN NUMBER, p_ruta_imagen IN VARCHAR2, p_activo IN NUMBER )
+                        </td>
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <a name="method_detail"></a>
+                <table width="100%" cellspacing="0" cellpadding="3" border="1">
+                    <tr class="TableHeadingColor">
+                        <td colspan="2">
+                            <font size="+2"><b>Method Detail</b></font>
+                        </td>
+                    </tr>
+                </table>
+
+                <hr>
+
+                <a name="GET_VENTAS"></a>
+                <h3>GET_VENTAS</h3>
+                <pre>
+GET_VENTAS RETURN SYS_REFCURSOR
+</pre>
+                <hr>
+
+                <a name="DELETE_PRODUCTO"></a>
+                <h3>DELETE_PRODUCTO</h3>
+                <pre>
+DELETE_PRODUCTO ( p_id_producto IN NUMBER )
+</pre>
+                <hr>
+
+                <a name="FIND_PRODUCTO_BY_NOMBRE"></a>
+                <h3>FIND_PRODUCTO_BY_NOMBRE</h3>
+                <pre>
+FIND_PRODUCTO_BY_NOMBRE (
+    p_nombre VARCHAR2,
+    p_resultado OUT SYS_REFCURSOR
+)
+</pre>
+                <hr>
+
+                <a name="GET_PRODUCTO_BY_ID"></a>
+                <h3>GET_PRODUCTO_BY_ID</h3>
+                <pre>
+GET_PRODUCTO_BY_ID (
+    p_id_producto IN NUMBER,
+    p_resultado OUT SYS_REFCURSOR
+)
+</pre>
+                <hr>
+
+                <a name="GET_PRODUCTOS"></a>
+                <h3>GET_PRODUCTOS</h3>
+                <pre>
+GET_PRODUCTOS ( p_resultado OUT SYS_REFCURSOR )
+</pre>
+                <hr>
+
+                <a name="INSERT_PRODUCTO"></a>
+                <h3>INSERT_PRODUCTO</h3>
+                <pre>
+INSERT_PRODUCTO (
+    p_id_producto IN NUMBER,
+    p_id_categoria IN NUMBER,
+    p_nombre IN VARCHAR2,
+    p_descripcion IN VARCHAR2,
+    p_precio IN NUMBER,
+    p_existencias IN NUMBER,
+    p_ruta_imagen IN VARCHAR2,
+    p_activo IN NUMBER
+)
+</pre>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252" />
+    <script src="GET_CATEGORIAS/report.js" type="text/javascript"></script>
+    <link href="GET_CATEGORIAS/report.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <table width="98%">
+            <tr>
+                <td>
+                    <h2 class="banner">GET_CATEGORIAS</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="maintabs">
+
+        <div class="currentmaintab" onclick="onSelectMainTab(this, 0)">
+            <div>
+                <p>Doc</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 1)">
+            <div>
+                <p>Details</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 2)">
+            <div>
+                <p>Grants</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 3)">
+            <div>
+                <p>References</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 4)">
+            <div>
+                <p>Dependencies</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 5)">
+            <div>
+                <p>Code</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div id="masterreports">
+
+        <div id="Master.0">
+            <div class="currentmasterreport">
+
+                <table cellspacing="0" cellpadding="1" width="100%" border="0">
+                    <tr>
+                        <td class="NavBarRow3" valign="top">
+                            <font size="-2">
+                                SUMMARY: <a href="#method_summary">METHOD</a>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+
+                <hr>
+
+                <a name="method_summary"></a>
+                <table width="100%" cellspacing="0" cellpadding="3" border="1">
+
+                    <tr class="TableHeadingColor">
+                        <td colspan="2">
+                            <font size="+2"><b>Method Summary</b></font>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td width="1%" valign="top" align="right">
+                            <font size="-1"><code>&nbsp;</code></font>
+                        </td>
+                        <td>
+                            <code>
+<b><a href="#GET_CATEGORIAS">GET_CATEGORIAS</a></b>
+( p_resultado OUT SYS_REFCURSOR )
+</code>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <p></p>
+
+                <a name="method_detail"></a>
+                <table width="100%" cellspacing="0" cellpadding="3" border="1">
+                    <tr class="TableHeadingColor">
+                        <td colspan="2">
+                            <font size="+2"><b>Method Detail</b></font>
+                        </td>
+                    </tr>
+                </table>
+
+                <a name="GET_CATEGORIAS"></a>
+
+                <h3>GET_CATEGORIAS</h3>
+
+                <pre>
+<B>GET_CATEGORIAS</B>(
+    p_resultado OUT SYS_REFCURSOR
+)
+</pre>
+
+                <dl>
+                    <dd>
+                        Procedimiento almacenado que obtiene todos los registros de la tabla categoria.
+                        Devuelve el conjunto de resultados mediante un cursor de salida.
+                    </dd>
+                </dl>
+
+                <hr>
+
+            </div>
+        </div>
+
+        <div id="Master.1">
+            <div class="masterreport">
+
+                <table id="Table.0" cellpadding="0" cellspacing="0">
+
+                    <tr>
+                        <th>NAME</th>
+                        <th>VALUE</th>
+                    </tr>
+
+                    <tr>
+                        <td>OWNER</td>
+                        <td>ABBOTT</td>
+                    </tr>
+                    <tr>
+                        <td>OBJECT_NAME</td>
+                        <td>GET_CATEGORIAS</td>
+                    </tr>
+                    <tr>
+                        <td>OBJECT_TYPE</td>
+                        <td>PROCEDURE</td>
+                    </tr>
+                    <tr>
+                        <td>STATUS</td>
+                        <td>VALID</td>
+                    </tr>
+                    <tr>
+                        <td>TEMPORARY</td>
+                        <td>N</td>
+                    </tr>
+                    <tr>
+                        <td>GENERATED</td>
+                        <td>N</td>
+                    </tr>
+                    <tr>
+                        <td>EDITIONABLE</td>
+                        <td>Y</td>
+                    </tr>
+                    <tr>
+                        <td>ORACLE_MAINTAINED</td>
+                        <td>N</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.2">
+            <div class="masterreport">
+                <table id="Table.1" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>PRIVILEGE</th>
+                        <th>GRANTEE</th>
+                        <th>GRANTABLE</th>
+                        <th>GRANTOR</th>
+                        <th>OBJECT_NAME</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.3">
+            <div class="masterreport">
+                <table id="Table.2" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>NAME</th>
+                        <th>OWNER</th>
+                        <th>TYPE</th>
+                        <th>STATUS</th>
+                    </tr>
+
+                    <tr>
+                        <td>categoria</td>
+                        <td>ABBOTT</td>
+                        <td>TABLE</td>
+                        <td>VALID</td>
+                    </tr>
+
+                    <tr>
+                        <td>ERRORES_AUDIT</td>
+                        <td>ABBOTT</td>
+                        <td>TABLE</td>
+                        <td>VALID</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.4">
+            <div class="masterreport">
+                <table id="Table.3" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>DEPENDENCY_NAME</th>
+                        <th>TYPE</th>
+                    </tr>
+
+                    <tr>
+                        <td>categoria</td>
+                        <td>TABLE</td>
+                    </tr>
+
+                    <tr>
+                        <td>ERRORES_AUDIT</td>
+                        <td>TABLE</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.5">
+            <div class="masterreport">
+                <pre>
+CREATE OR REPLACE PROCEDURE GET_CATEGORIAS (
+    p_resultado OUT SYS_REFCURSOR
+) AS
+    VMES VARCHAR2(4000);
+    VCOD NUMBER;
+BEGIN
+    OPEN p_resultado FOR
+    SELECT * FROM categoria;
+
+EXCEPTION
+    WHEN OTHERS THEN
+        VMES := SQLERRM;
+        VCOD := SQLCODE;
+        INSERT INTO ERRORES_AUDIT (USUARIO, ORIGEN, FECHA, VERROR)
+        VALUES (USER, 'GET_CATEGORIAS', SYSDATE, VCOD || ' - ' || VMES);
+END GET_CATEGORIAS;
+</pre>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

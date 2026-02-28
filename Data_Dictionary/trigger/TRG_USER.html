@@ -1,0 +1,235 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252" />
+    <script src="TRG_USER/report.js" type="text/javascript"></script>
+    <link href="TRG_USER/report.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <table width="98%">
+            <tr>
+                <td>
+                    <h2 class="banner">TRG_USER</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="maintabs">
+
+        <div class="currentmaintab" onclick="onSelectMainTab(this, 0)">
+            <div>
+                <p>Details</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 1)">
+            <div>
+                <p>Grants</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 2)">
+            <div>
+                <p>References</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 3)">
+            <div>
+                <p>Dependencies</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 4)">
+            <div>
+                <p>Code</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div id="masterreports">
+
+        <div id="Master.0">
+            <div class="currentmasterreport">
+
+                <table id="Table.0" cellpadding="0" cellspacing="0">
+
+                    <tr>
+                        <th>NAME</th>
+                        <th>VALUE</th>
+                    </tr>
+
+                    <tr>
+                        <td>OWNER</td>
+                        <td>PLUSHISHOP</td>
+                    </tr>
+                    <tr>
+                        <td>OBJECT_NAME</td>
+                        <td>TRG_USER</td>
+                    </tr>
+                    <tr>
+                        <td>OBJECT_TYPE</td>
+                        <td>TRIGGER</td>
+                    </tr>
+                    <tr>
+                        <td>TABLE_NAME</td>
+                        <td>Usuario</td>
+                    </tr>
+                    <tr>
+                        <td>TRIGGER_TYPE</td>
+                        <td>AFTER EACH ROW</td>
+                    </tr>
+                    <tr>
+                        <td>TRIGGERING_EVENT</td>
+                        <td>INSERT OR UPDATE OR DELETE</td>
+                    </tr>
+                    <tr>
+                        <td>STATUS</td>
+                        <td>VALID</td>
+                    </tr>
+                    <tr>
+                        <td>DESCRIPTION</td>
+                        <td>
+                            Registra en MENSAJE_TRIGGERS las operaciones
+                            INSERT, UPDATE y DELETE realizadas sobre la tabla Usuario.
+                            En caso de error, guarda información en ERRORES_AUDIT.
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.1">
+            <div class="masterreport">
+                <table id="Table.1" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>PRIVILEGE</th>
+                        <th>GRANTEE</th>
+                        <th>GRANTABLE</th>
+                        <th>GRANTOR</th>
+                        <th>OBJECT_NAME</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.2">
+            <div class="masterreport">
+                <table id="Table.2" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>NAME</th>
+                        <th>OWNER</th>
+                        <th>TYPE</th>
+                        <th>STATUS</th>
+                    </tr>
+
+                    <tr>
+                        <td>Usuario</td>
+                        <td>PLUSHISHOP</td>
+                        <td>TABLE</td>
+                        <td>VALID</td>
+                    </tr>
+                    <tr>
+                        <td>MENSAJE_TRIGGERS</td>
+                        <td>PLUSHISHOP</td>
+                        <td>TABLE</td>
+                        <td>VALID</td>
+                    </tr>
+                    <tr>
+                        <td>ERRORES_AUDIT</td>
+                        <td>PLUSHISHOP</td>
+                        <td>TABLE</td>
+                        <td>VALID</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.3">
+            <div class="masterreport">
+                <table id="Table.3" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>DEPENDENCY_NAME</th>
+                        <th>TYPE</th>
+                    </tr>
+
+                    <tr>
+                        <td>Usuario</td>
+                        <td>TABLE</td>
+                    </tr>
+                    <tr>
+                        <td>MENSAJE_TRIGGERS</td>
+                        <td>TABLE</td>
+                    </tr>
+                    <tr>
+                        <td>ERRORES_AUDIT</td>
+                        <td>TABLE</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="Master.4">
+            <div class="masterreport">
+                <pre>
+CREATE OR REPLACE TRIGGER TRG_USER 
+    AFTER UPDATE OR INSERT OR DELETE ON Usuario
+    FOR EACH ROW
+DECLARE
+    VCOD NUMBER;
+    VMES VARCHAR2(500);
+BEGIN
+
+    IF DELETING THEN
+        INSERT INTO MENSAJE_TRIGGERS 
+        VALUES(USER,' SE HA BORRADO UN USUARIO:'||
+               :OLD.id_usuario ||' '||
+               :OLD.nombre||' '||
+               :OLD.username);
+
+    ELSIF UPDATING THEN
+        INSERT INTO MENSAJE_TRIGGERS 
+        VALUES(USER,' SE HA ACTUALIZADO UN USUARIO:'||
+               :OLD.id_usuario ||' '||
+               :OLD.nombre||' '||
+               :OLD.username);
+
+    ELSIF INSERTING THEN
+        INSERT INTO MENSAJE_TRIGGERS 
+        VALUES(USER,' SE HA INSERTADO UN USUARIO'||
+               :NEW.id_usuario ||' '||
+               :NEW.nombre||' '||
+               :NEW.username); 
+    END IF;
+    
+EXCEPTION
+    WHEN OTHERS THEN
+        VMES := SQLERRM;
+        VCOD := SQLCODE;
+
+        INSERT INTO ERRORES_AUDIT 
+            (USUARIO, ORIGEN, FECHA, VERROR)
+        VALUES 
+            (USER, 'TRG_USER', SYSDATE, 
+             VCOD || ' - ' || VMES);
+END;
+</pre>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

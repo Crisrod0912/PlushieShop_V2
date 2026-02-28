@@ -1,0 +1,194 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252" />
+    <script src="PKG_VENTAS/report.js" type="text/javascript"></script>
+    <link href="PKG_VENTAS/report.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <table width="98%">
+            <tr>
+                <td>
+                    <h2 class="banner">PKG_VENTAS</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="maintabs">
+
+        <div class="currentmaintab" onclick="onSelectMainTab(this, 0)">
+            <div>
+                <p>Doc</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 1)">
+            <div>
+                <p>Details</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 2)">
+            <div>
+                <p>Code</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div id="masterreports">
+
+        <div id="Master.0">
+            <div class="currentmasterreport">
+
+                <table cellspacing="0" cellpadding="1" width="100%" border="0">
+                    <tr>
+                        <td class="NavBarRow3" valign="top">
+                            <font size="-2">
+                                SUMMARY: <a href="#method_summary">METHOD</a>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+
+                <hr>
+
+                <h3>Resumen de Métodos</h3>
+                <a name="method_summary"></a>
+
+                <table width="100%" cellspacing="0" cellpadding="3" border="1">
+
+                    <tr class="TableHeadingColor">
+                        <td colspan="2">
+                            <font size="+1"><b>Method Summary</b></font>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td width="1%"></td>
+                        <td>
+                            <b><a href="#CREAR_FACTURA">CREAR_FACTURA</a></b>
+                            ( usu_id NUMBER ) RETURN NUMBER
+                            <br> Crea una nueva factura para un usuario.
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#GET_VENTAS">GET_VENTAS</a></b>
+                            RETURN SYS_REFCURSOR
+                            <br> Obtiene el listado de ventas registradas.
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#INSERTAR_VENTA">INSERTAR_VENTA</a></b>
+                            ( fac_id NUMBER, prod_id NUMBER, prec NUMBER, cant NUMBER )
+                            <br> Inserta un detalle de venta asociado a una factura.
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#ACTUALIZAR_FACTURA">ACTUALIZAR_FACTURA</a></b>
+                            ( fac_id NUMBER, tot NUMBER )
+                            <br> Actualiza el total de una factura.
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td></td>
+                        <td>
+                            <b><a href="#GETFACTURA">getFactura</a></b>
+                            ( p_Id_Factura INT )
+                            <br> Obtiene la información de una factura específica.
+                        </td>
+                    </tr>
+
+                </table>
+
+                <hr>
+                <h3>Detalle de Métodos</h3>
+                <a name="method_detail"></a>
+
+                <hr>
+                <a name="CREAR_FACTURA"></a>
+                <h4>CREAR_FACTURA</h4>
+                <pre>
+FUNCTION CREAR_FACTURA (
+    usu_id NUMBER
+) RETURN NUMBER;
+</pre>
+                <p>
+                    Genera una nueva factura asociada a un usuario específico.
+                    Devuelve el ID de la factura creada.
+                </p>
+
+                <hr>
+                <a name="GET_VENTAS"></a>
+                <h4>GET_VENTAS</h4>
+                <pre>
+FUNCTION GET_VENTAS
+RETURN SYS_REFCURSOR;
+</pre>
+                <p>
+                    Retorna un cursor con el listado completo de ventas registradas en el sistema.
+                </p>
+
+                <hr>
+                <a name="INSERTAR_VENTA"></a>
+                <h4>INSERTAR_VENTA</h4>
+                <pre>
+PROCEDURE INSERTAR_VENTA (
+    fac_id NUMBER,
+    prod_id NUMBER,
+    prec NUMBER,
+    cant NUMBER
+);
+</pre>
+                <p>
+                    Inserta un registro en la tabla de ventas, asociando un producto a una factura.
+                </p>
+
+                <hr>
+                <a name="ACTUALIZAR_FACTURA"></a>
+                <h4>ACTUALIZAR_FACTURA</h4>
+                <pre>
+PROCEDURE ACTUALIZAR_FACTURA (
+    fac_id NUMBER,
+    tot NUMBER
+);
+</pre>
+                <p>
+                    Actualiza el total de una factura específica.
+                </p>
+
+                <hr>
+                <a name="GETFACTURA"></a>
+                <h4>getFactura</h4>
+                <pre>
+PROCEDURE getFactura (
+    p_Id_Factura INT
+);
+</pre>
+                <p>
+                    Obtiene la información detallada de una factura según su ID.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

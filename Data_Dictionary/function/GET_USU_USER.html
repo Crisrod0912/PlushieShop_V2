@@ -1,0 +1,261 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252" />
+    <script src="GET_USU_USER/report.js" type="text/javascript"></script>
+    <link href="GET_USU_USER/report.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <table width="98%">
+            <tr>
+                <td>
+                    <h2 class="banner">GET_USU_USER</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="maintabs">
+
+        <div class="currentmaintab" onclick="onSelectMainTab(this, 0)">
+            <div>
+                <p>Doc</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 1)">
+            <div>
+                <p>Details</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 2)">
+            <div>
+                <p>Grants</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 3)">
+            <div>
+                <p>References</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 4)">
+            <div>
+                <p>Dependencies</p>
+            </div>
+        </div>
+
+        <div class="maintab" onclick="onSelectMainTab(this, 5)">
+            <div>
+                <p>Code</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div id="masterreports">
+
+        <div id="Master.0">
+            <div class="currentmasterreport">
+
+                <table cellspacing="0" cellpadding="3" width="100%" border="1">
+
+                    <tr class="TableHeadingColor">
+                        <td colspan="2">
+                            <font size="+2"><b>Method Summary</b></font>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowColor">
+                        <td width="1%" valign="top" align="right">
+                            <font size="-1"><code>&nbsp;</code></font>
+                        </td>
+                        <td>
+                            <code>
+<b>GET_USU_USER</b>
+( user_name VARCHAR2 )
+RETURN SYS_REFCURSOR
+</code>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="100%" cellspacing="0" cellpadding="3" border="1">
+
+                    <tr class="TableHeadingColor">
+                        <td colspan="2">
+                            <font size="+2"><b>Method Detail</b></font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <pre>
+GET_USU_USER (
+    user_name VARCHAR2
+) RETURN SYS_REFCURSOR
+</pre>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.1">
+            <div class="masterreport">
+
+                <table cellpadding="4" cellspacing="0" border="1" width="100%">
+
+                    <tr>
+                        <th>NAME</th>
+                        <th>VALUE</th>
+                    </tr>
+
+                    <tr>
+                        <td>OBJECT_NAME</td>
+                        <td>GET_USU_USER</td>
+                    </tr>
+                    <tr>
+                        <td>OBJECT_TYPE</td>
+                        <td>FUNCTION</td>
+                    </tr>
+                    <tr>
+                        <td>RETURN_TYPE</td>
+                        <td>SYS_REFCURSOR</td>
+                    </tr>
+                    <tr>
+                        <td>PARAMETER 1</td>
+                        <td>user_name VARCHAR2</td>
+                    </tr>
+                    <tr>
+                        <td>LOCAL_VARIABLE 1</td>
+                        <td>VMES VARCHAR2(4000)</td>
+                    </tr>
+                    <tr>
+                        <td>LOCAL_VARIABLE 2</td>
+                        <td>VCOD NUMBER</td>
+                    </tr>
+                    <tr>
+                        <td>LOCAL_VARIABLE 3</td>
+                        <td>CDATOS SYS_REFCURSOR</td>
+                    </tr>
+                    <tr>
+                        <td>EXCEPTION_HANDLING</td>
+                        <td>WHEN OTHERS</td>
+                    </tr>
+                    <tr>
+                        <td>ERROR_LOG_TABLE</td>
+                        <td>ERRORES_AUDIT</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.2">
+            <div class="masterreport">
+
+                <table cellpadding="4" cellspacing="0" border="1" width="100%">
+                    <tr>
+                        <th>PRIVILEGE</th>
+                        <th>GRANTEE</th>
+                        <th>GRANTABLE</th>
+                        <th>GRANTOR</th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.3">
+            <div class="masterreport">
+
+                <table cellpadding="4" cellspacing="0" border="1" width="100%">
+                    <tr>
+                        <th>REFERENCED OBJECT</th>
+                        <th>TYPE</th>
+                    </tr>
+
+                    <tr>
+                        <td>GET_USU_USERCS</td>
+                        <td>PROCEDURE</td>
+                    </tr>
+
+                    <tr>
+                        <td>ERRORES_AUDIT</td>
+                        <td>TABLE</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.4">
+            <div class="masterreport">
+
+                <table cellpadding="4" cellspacing="0" border="1" width="100%">
+                    <tr>
+                        <th>DEPENDENCY</th>
+                        <th>TYPE</th>
+                    </tr>
+
+                    <tr>
+                        <td>GET_USU_USERCS</td>
+                        <td>PROCEDURE</td>
+                    </tr>
+
+                    <tr>
+                        <td>ERRORES_AUDIT</td>
+                        <td>TABLE</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div id="Master.5">
+            <div class="masterreport">
+
+                <pre>
+CREATE OR REPLACE FUNCTION GET_USU_USER (
+    user_name VARCHAR2
+) RETURN SYS_REFCURSOR
+AS
+    VMES VARCHAR2(4000);
+    VCOD NUMBER;
+    CDATOS SYS_REFCURSOR;
+BEGIN
+    GET_USU_USERCS(user_name, CDATOS);
+    
+    RETURN CDATOS;
+    
+EXCEPTION    
+    WHEN OTHERS THEN  
+    VMES := SQLERRM;
+    VCOD := SQLCODE;
+    INSERT INTO ERRORES_AUDIT VALUES (USER, 'GET_USU_USER', SYSDATE, VCOD || ' - '|| VMES);
+END GET_USU_USER;
+</pre>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
