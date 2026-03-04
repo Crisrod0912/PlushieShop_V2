@@ -71,7 +71,7 @@ PlushieShop is a web application developed with Java, Spring Boot, and Oracle. I
 
 4. 🔐 Configure database permissions:
 
-   After importing the database, create a user and grant them the necessary permissions by running the following commands in the Oracle or SQL*Plus console:
+   After importing the database, create a user and grant them the necessary permissions by running the following commands in the Oracle SQL Developer or SQL*Plus console:
 
    ```sql
    CREATE USER Admin1 IDENTIFIED BY Admin1;
